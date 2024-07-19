@@ -1,0 +1,78 @@
+<html>
+<head>
+	<title>Border</title>
+<style>
+	p.dotted
+	{
+		border-style: dotted;
+		margin:10px 25px 15px;
+		padding:10px 15px 25px 20px;
+	}
+	p.solid
+	{
+		border-style: solid;
+	}
+	p.double
+	{
+		border-style: double;
+	}
+	p.groove
+	{
+		border-style: groove;
+	}
+	p.ridge
+	{
+		border-style: ridge;
+	}
+	p.inset
+	{
+		border-style: inset;
+	}
+	p.none
+	{
+		border-style: none;
+	}
+	.item
+	{
+		display:flex;
+		justify-content: space-evenly;
+		background-color: lightblue;
+	}
+</style>
+</head>
+<body>
+	<p class="dotted">Hello</p>
+	<p class="solid">Hello</p>
+	<p class="double">Hello</p>
+	<p class="groove">Hello</p>
+	<p class="ridge">Hello</p>
+	<p class="inset">Hello</p>
+	<p class="none">Hello</p>
+<hr/>
+<div class="item">
+	<p>Home</p>
+	<p>About</p>
+	<p>Menu</p>
+	<p>Contact</p>
+</div>
+<div style="display: flex;">
+	<div style="width: 50%;margin: 15px 10px 10px 10px">Column1</div>
+	<div style="width: 50%;margin: 15px 10px 10px 10px">Column2</div>
+</div>
+<hr/>
+<div style="display: flex;">
+	<div style="width: 33.33%;margin: 15px 10px 10px 10px">Column1</div>
+	<div style="width: 33.33%;margin: 15px 10px 10px 10px">Column2</div>
+	<div style="width: 33.33%;margin: 15px 10px 10px 10px">Column3</div>
+</div>
+<hr/>
+<div style="display: flex;">
+	<div style="width: 25%;margin: 15px 10px 10px 10px">Column1</div>
+	<div style="width: 25%;margin: 15px 10px 10px 10px">Column2</div>
+	<div style="width: 25%;margin: 15px 10px 10px 10px">Column3</div>
+	<div style="width: 25%;margin: 15px 10px 10px 10px">Column4</div>
+</div>
+<hr/>
+<p style="text-align:center"> &copy; by ByteXL 2024 </p>
+</body>
+</html>
