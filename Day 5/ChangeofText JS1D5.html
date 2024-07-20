@@ -1,0 +1,27 @@
+<!-- Changing the text when on click -->
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+<h1> Click the button and sentence to change </h1>
+<p id="lasya" onclick="welcomemsg()"> Hello Lasya - Have a nice day</p> 
+<button id="sample" onclick="andra()">
+	Click me
+</button>
+</body>
+<script>
+	function welcomemsg()	
+	{
+		document.getElementById('lasya').innerHTML="Welcome to first JavaScript class";
+	}
+	function andra()	
+	{
+		document.getElementById('sample').innerHTML="First day of JS";
+	}
+</script>
+</html>

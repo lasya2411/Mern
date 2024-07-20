@@ -1,0 +1,30 @@
+<!--Confirm Box -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<h1><u>Confirm Box Demo</u></h1>
+	<h2>Click on the Confirm button to get the Confirm box </h2>
+	<button onclick="lasya()">Confirm</button>
+	<p id="mango">Confirm your answer?</p>
+</body>
+<script>
+	function lasya()
+	{
+		var a;//declaration
+		if(confirm("This is the final answer"))
+		{
+			a="You Submitted the answer"; //The answer changes
+		}
+		else
+		{
+			a="You cancelled the submission";
+		}
+		document.getElementById('mango').innerHTML = a;
+	}
+</script>
+</html>

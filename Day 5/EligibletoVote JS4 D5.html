@@ -1,0 +1,29 @@
+<!-- Check if eligible to vote -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body> <br>
+	<h1><u>Checking whether eligible to vote or not</u></h1>
+	<p>Enter the age to check </p>
+	<input type="number" id="myage" value=""> <br> <br>
+	<button onclick="lasya()">Check Result</button>
+</body>
+<script>
+	function lasya()
+	{
+		var a=document.getElementById('myage').value;
+		if(a>18)
+		{
+			alert("Eligible to Vote");
+		}
+		else
+		{
+			alert("Not eligible to vote");
+		}
+	}
+</script>
+</html>
