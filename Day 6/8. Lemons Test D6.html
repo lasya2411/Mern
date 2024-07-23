@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<input type="number" id="num" placeholder="Enter a number"> <br> <br>
+	<button onclick="lasya()">Check Result</button> <br> <br>
+	<div id="result"> </div>
+</body>
+<script>
+	function lasya()
+	{
+		var a=document.getElementById('num').value;
+		var a = Number(a);
+		var b = (a<0) ? "enter +ve" : (Number.isInteger(a) && (a<21)) ? "less" : (a>21) ? "more" : "test";
+		document.getElementById('result').innerHTML = b;
+	}
+</script>
+</html>

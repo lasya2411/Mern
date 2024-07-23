@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<p id="demo"></p>
+	<script>
+		//length
+		const fruits = ["Banana", "Orange", "Apple", "Mango"];
+		let size = fruits.length;
+		document.write("length:",size);
+		document.write("<br>");
+
+		//tostring()
+		const combo= ["Banana", "Orange", 55, 'M'];
+		document.write(combo.toString()); 
+		document.write("<br>");
+
+		//ArrayAt()
+		const cars = ["BMW", "Supra", "Honda", "Toyota"];
+		document.write(cars.at(2));
+		document.write("<br>");
+
+		//Array join()
+		const bikes=["Royal Enfield", "Pulsar", "Splendor"]
+		document.write(bikes.join(" * "));
+		document.write("<br>");
+
+		//Array pop()
+		const flowers = ["Rose", "Tulip", "Peonies", "Lily"];
+		document.write(flowers.pop()) //List after popping
+		document.write("<br>");
+
+		//Array push()
+		const Nolan = ["Interstellar", "Inception", "The Dark Knight"];
+		a = Nolan.push("The Dark knight Rises")
+		document.write(Nolan); // Gives the list after pushing
+		document.write("<br>");
+		document.write(Nolan.push()); //Gives the length of the list
+		document.write("<br>");
+
+		//Array shift()
+		const transport = ["Bike", "Car", "Ship", "train"];
+		b = transport.shift();
+		document.write(transport); //gives the list after shifting
+		document.write("<br>");
+		document.write(transport.shift()); // gives the value that is shifted out
+		document.write("<br>");
+
+		//Array Unshift()
+		const transport1 = ["Bike", "Car", "Ship", "train"];
+		c = transport1.unshift("Flight");
+		document.write(transport1); //gives the list after unshifting(Adds element at start)
+		document.write("<br>");
+		document.write(transport1.unshift()); // gives the length of the new list
+		document.write("<br>"); 
+
+		//
+
+	</script>
+</body>
+</html>

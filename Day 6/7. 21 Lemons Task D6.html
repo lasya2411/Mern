@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<input type="number" id="num" placeholder="Enter a number"> <br> <br>
+	<button onclick="lasya()">Check Result</button> <br> <br>
+	<div id="result"> </div>
+</body>
+<script>
+	function lasya()
+	{
+		var a=document.getElementById('num').value;
+		var change=Number(a);
+		var result1=document.getElementById('result');
+		var out;
+		switch(true)
+		{
+		case (a>0 && a<21):
+			out= (21-a + " lemons less");
+			break;
+		case 5.5:
+			out="Sufficient";
+			break;
+		case a>21:
+			out=(a-21 + " lemons extra");
+			break;
+		case (a<0 ):
+			out="Please enter valid number";
+			break;
+		case isNan(parseFloat(a)):
+			out="Please enter valid number";
+			break;
+		default:
+			out="wrong input";
+			break;
+		}
+		document.getElementById('result').textContent = out;
+	}
+	
+</script>
+</html>

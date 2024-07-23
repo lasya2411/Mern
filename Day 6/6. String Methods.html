@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<script>
+		//Length of the string
+		let text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+		let len=text.length;
+		document.write(len);
+		document.write("<br>");
+
+		//charAt() = Gives the string at the given index
+		let char = text.charAt(0);
+		document.write(char);
+		document.write("<br>");
+
+		//slice = Gives the substring
+		let text1 = "Frozen World";
+		let sli = text1.slice(-6,8); //starts from 7 and gives before 11
+		document.write(sli);
+		document.write("<br>");
+
+		//substring = Gives the substring but start and end values less than 0 are treated as 0
+		let substring = text1.substring(-2);
+		document.write(substring);
+		document.write("<br>");
+
+		//substr = gives the substring but 2nd parameter specifies the length of the extracted part
+		let substr = text1.substr(-6,8); //prints until -8 from backwards // backwards starts from -1
+		document.write(substr);
+		document.write("<br>");
+
+		//UpperCase
+		let upp = text1.toUpperCase();
+		document.write(upp);
+		document.write("<br>");
+
+		//LowerCase
+		let low = text1.toLowerCase();
+		document.write(low);
+		document.write("<br>");
+
+		//concat 
+		let text2 = "Hello";
+		let text3 = "World";
+		let text4 = text2.concat(" ", text3);
+		document.write(text4);
+		document.write("<br>");
+
+		//trim == trims the spaces
+		let trim1= "      I am Elsa!      ";
+		let trim2 = trim1.trim();
+		document.write(trim2);
+		document.write("<br>");
+
+		//trimStart() = trims the spaces at the start
+		let trims1 = "     Hello World!     ";
+		let trims2 = trims1.trimStart();
+		document.write(trims2);
+		document.write("<br>");
+
+		//trimEnd() = trims the spaces at the end
+		let trime1 = "     Hello World!     ";
+		let trime2 = trime1.trimEnd();
+		document.write(trime2);
+		document.write("<br>");
+
+		//repeat
+		let rep1 = "Hello world!";
+		let rep2 = rep1.repeat(2);
+		document.write(rep2);
+		document.write("<br>");
+</script>
+</body>
+</html>
