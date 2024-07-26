@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body onload="startTime()">
+<h2>JavaScript Clock</h2>
+<div id="txt"></div>
+<p id="date"></p>
+<script>
+function startTime() {
+  const today = new Date();
+  let h = today.getHours();
+  let m = today.getMinutes();
+  let s = today.getSeconds();
+  document.getElementById('txt').innerHTML =  h + ":" + checkTime(m) + ":" + checkTime(s);
+  setTimeout(startTime, 1000);
+  document.getElementById('date').innerHTML = today;
+}
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
+</script>
+</body>
+</html>
