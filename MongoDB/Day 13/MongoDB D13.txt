@@ -1,0 +1,90 @@
+Use ciet
+db.createUser({ user: "perfectadmin", pwd: "123456", roles: [{ role: "userAdminAnyDatabase", db: "admin" }] });
+db.getUsers() --gives the 5 users created in ciet 
+
+
+db.createRole({ role: "userAdminAnyDatabase", privileges: [ { resource: { db: "ciet", collection: "" }, actions: [ "find", "update", "insert", "remove" ] } ], roles: [] });
+
+Create - Insert 
+Retrieve - Find 
+Update - Update 
+Delete - Remove 
+
+db.getRoles() -- gives the 1 role that is created
+ 
+db.createRole({ role: "balajiAnyDatabase", privileges: [ { resource: { db: "ciet", collection: "" }, actions: [ "find", "update", "insert", "remove" ] } ], roles: [] });
+
+db.stats() = to find out the size of your MongoDB database 
+
+db.salaries.aggregate( [{ $match : { amount : { $gt : 50000, $lte : 75000 } } }] );
+
+***** Whenever we use column name as value we use $ value *****
+
+db.student.aggregate([{$match: {courses: {$in: ["Python","Java"]}}}])
+only gives the output when student is registered in either of the courses 
+
+db.student.aggregate([{$match: {courses: {$nin: ["Python","Java"]}}}])
+
+--->Data Types in MongoDB
+1.Date: 1. Date() - Gives the present Indian time
+	2. new Date()
+	3. ISODate()
+2.String 
+3.Double
+4.Boolean
+5.Null
+6.Date 
+7.Integer
+8.Binary Date 
+9.Array 
+10.Object
+
+--->BSON
+1. Binary JSON
+2. For data storage 
+3. JSON Readabilty - Human and machine
+   BSON Readability - Machine	
+4. It contains all types of datatypes - BSON files may contain datetime or binary objects that are not natively representable in pure JSON.
+5. It's better than JSON because of its performance i.e faster to parse and generate than JSON. It is more secure than JSON 
+6.JSON objects and properties don't have fixed length which makes traversal slower.
+7.BSON file is a binary representation of the corresponding JSON file
+
+--->Creation of schema by coding (with the help of properties)
+db.createCollection("department", {
+  validator: { 
+    $jsonSchema: {
+      bsonType: "object",
+      required: [ "depname", "email" ],
+      properties: {
+        depname: {
+          bsonType: "string",
+          description: "must be a string and is required"
+        },
+        email: {
+          bsonType: "string",
+          description: "must be a string and is required"
+        }
+      }
+    }
+  }
+});
+
+1.Properties - column name with extra characteristics 
+2.Username and email are required fields
+3.By default entire property type(bson type) is object 
+4.With the help of validator key, the schema can be checked if it is validated or not 
+5.Query result format is always object 
+6.Query request format is object aswell
+
+db.department.insertOne({depname:"cse",age:25,email:"abc@gmail.com"});
+//Here age will also be present in the collection because MONGODB adds dynamic fields.
+
+--->Delete and Remove 
+db.department.deleteOne({depname:"IT" }) 
+db.department.deleteMany({depname:"ME"})
+remove is depricated use deleteone,deleteMany...
+
+db.department.findOneAndDelete({depname:"robotics"}) ---  finds a document and returns the deleted document.
+db.department.findOneAndDelete({depname:"mech"}) --- if there is no document ot returns null
+//If the query contains cse which is in two columns, then it deletes the starting document
+
