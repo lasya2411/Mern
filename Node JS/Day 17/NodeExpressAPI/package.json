@@ -1,0 +1,27 @@
+{
+  "name": "lasyaapiproject",
+  "version": "1.0.0",
+  "description": "API creation at postman checks",
+  "main": "server.js",
+  "scripts": {
+    "test": "node mongo commands"
+  },
+  "keywords": [
+    "mongoose",
+    "passport",
+    "passport-local-mongoose",
+    "body-parser",
+    "express",
+    "express-session",
+    "passport-local",
+    "ejs"
+  ],
+  "author": "lasya",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.19.2",
+    "mongoose": "^8.5.2",
+    "nodemon": "^3.1.4"
+  }
+}
