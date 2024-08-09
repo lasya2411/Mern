@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penguins</title>
+    <style>
+    body {
+            font-family: Arial, sans-serif;
+            background-color: AliceBlue; 
+            color: Black;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: MediumSeaGreen; 
+            padding: 10px 0;
+            text-align: center;
+            color: White;
+        }
+        .navbar {
+            background-color: Teal; 
+            display: flex;
+            justify-content: center; 
+            padding: 0;
+            margin: 0;
+        }
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .navbar ul li {
+            margin: 0;
+        }
+        .navbar ul li a {
+            display: block;
+            color: White;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .navbar ul li a:hover {
+            background-color: DarkSeaGreen;
+        }
+        .container {
+            padding: 20px;
+            text-align: center;
+        }
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .title {
+            color: DarkSlateGray; 
+        }
+        .penguin-image {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+        }
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: MediumSeaGreen; 
+            color: White;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .button:hover {
+            background-color: DarkOliveGreen; 
+        }
+        .footer {
+            background-color: MediumSeaGreen; s
+            color: White;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>All About Penguins</h1>
+    </div>
+
+    <div class="navbar">
+        <ul>
+            <li><a href="#" id="home-link">Home</a></li>
+            <li><a href="#" id="habitat-link">Habitat</a></li>
+            <li><a href="#" id="species-link">Species</a></li>
+            <li><a href="#" id="funfact-link">Fun Fact</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <div class="content home" id="home">
+            <h2 class="title">Welcome to the Penguin World</h2>
+            <img src="babypenguin.jpg" alt="Penguin" class="penguin-image">
+            <p>Penguins are a group of aquatic, flightless birds living almost exclusively in the Southern Hemisphere, especially in Antarctica. They are known for their distinct tuxedo-like appearance and their playful nature.</p>
+        </div>
+
+        <div class="content habitat" id="habitat">
+            <h2 class="title">Penguin Habitat</h2>
+            <p>Penguins can be found in several locations across the Southern Hemisphere. While most people associate penguins with Antarctica, different species inhabit regions from the cold Antarctic to the more temperate zones like South Africa, Australia, and South America.</p>
+        </div>
+
+        <div class="content species" id="species">
+            <h2 class="title">Penguin Species</h2>
+            <p>There are 18 species of penguins, each with unique characteristics. Some of the most well-known species include:</p>
+            <ul>
+                <li><strong>Emperor Penguin:</strong> The largest of the penguin species.</li>
+                <li><strong>King Penguin:</strong> Slightly smaller than the Emperor, found in the sub-Antarctic.</li>
+                <li><strong>Adélie Penguin:</strong> Known for their white-ringed eyes and tuxedo-like appearance.</li>
+                <li><strong>Chinstrap Penguin:</strong> Recognizable by the narrow black band under their head.</li>
+            </ul>
+        </div>
+
+        <div class="content funfact" id="funfact">
+            <h2 class="title">Penguin Fun Fact</h2>
+            <button class="button" onclick="showFact()">Show Fun Fact</button>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Penguin Enthusiasts</p>
+    </div>
+
+    <script>
+        const links = document.querySelectorAll('.navbar a');
+        links.forEach((link) => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const sectionId = link.getAttribute('id').replace('-link', '');
+                const section = document.getElementById(sectionId);
+                section.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        function showFact() {
+            alert("Did you know? Penguins can hold their breath for up to 20 minutes while diving!");
+        }
+    </script>
+</body>
+</html>
