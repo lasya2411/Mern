@@ -1,0 +1,57 @@
+1.$set
+db.customer.updateOne({age: {$lt: 25}}, {$set: {address: 'IND'}})
+
+2.$match 
+db.student.aggregate([
+    { $match: { courses: { $in: ["Python", "Java"] } } },
+    { $group: { _id: "$courses", count: { $sum: 1 } } }
+]);
+
+3.$sort 
+db.customer.find().sort({ salary: 1 });
+
+4.$project
+db.employees.aggregate([
+    { $project: { firstName: 1, lastName: 1, salary: 1, _id: 0 } }
+]);
+
+5.$limit
+db.employees.aggregate([
+    { $limit: 5 }
+]);
+
+6.$lookup
+db.author.aggregate([
+    {
+        $lookup: {
+            from: "books",
+            localField: "bo_id",
+            foreignField: "_id",
+            as: "bookDetails"
+        }
+    }
+]);
+
+7.$group
+db.student.aggregate([
+    { $group: { _id: null, avgsal: { $avg: "$salary" } } }
+]);
+
+8.$count
+db.customer.aggregate([
+   { $match: { address: "IND" } },    
+   { $count: "total_customers" }  
+]);
+
+9.$merge
+db.employee.aggregate([
+   { $match: { amount: { $gt: 1000 } } },
+   { $merge: "salary" }
+]);
+
+10.$out
+db.students.aggregate([
+   { $match: { age: { $gte: 20 } } },
+   { $out: "oldStudents" }
+]);
+

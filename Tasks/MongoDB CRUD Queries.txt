@@ -1,0 +1,68 @@
+1.Create: Insert a Single Document --
+
+db.customer.insertOne({
+    sname: "abc",
+    age: 20,
+    email: "abc@gmail.com",
+    phone: 4872387453,
+    fee: 777.75,
+    address: "NYC"
+});
+
+2.Create: Insert Multiple Documents --
+
+db.customer.insertMany([
+    {_id: 3, name: "abc", age: 21, dob: '2005-10-16'},
+    {_id: 4, name: "abc", age: 24, dob: '2003-5-9'}
+]);
+
+3.Read: Retrieve All Documents in a Collection -- 
+
+db.customer.find(); 
+db.customer.find().pretty();
+
+
+4. Read: Find Documents with a Condition -- db.customer.find({age: {$ne: 26}});
+
+5. Update: Update a Single Document -- 
+
+db.customer.updateOne(
+    {age: 30},
+    {$set: {"name": "abc"}}
+);
+
+6. Update: Update Multiple Documents -- 
+
+db.customer.updateMany(
+    {name: "abc"},
+    {$set: {age: 25, dob: '2003-07-09'}}
+);
+
+7. Delete: Delete a Single Document -- db.department.deleteOne({depname: "IT"});
+
+8. Delete: Delete Multiple Documents -- db.department.deleteMany({depname: "ME"});
+
+9. Users and Roles  
+
+db.createUser({
+    user: "perfectadmin",
+    pwd: "123456",
+    roles: [{ role: "userAdminAnyDatabase", db: "admin" }]
+});
+
+db.getUsers()
+
+db.createRole({ role: "userAdminAnyDatabase", privileges: [ { resource: { db: "ciet", collection: "" }, actions: [ "find", "update", "insert", "remove" ] } ], roles: [] });
+
+db.getRoles()
+
+
+10.db.student.aggregate([
+    {$group: {
+        _id: null,
+        minsal: {$min: "$salary"},
+        maxsal: {$max: "$salary"},
+        avgsal: {$avg: "$salary"},
+        totalsal: {$sum: "$salary"}
+    }}
+]);
