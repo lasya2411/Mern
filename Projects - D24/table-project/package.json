@@ -1,0 +1,28 @@
+{
+  "name": "table-project",
+  "version": "1.0.0",
+  "description": "mern stack related project",
+  "main": "table.js",
+  "scripts": {
+    "test": "crud application",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon server/table.js",
+    "client": "npm start --prefix client"
+  },
+  "keywords": [
+    "client",
+    "server",
+    "json",
+    "express",
+    "mongoose",
+    "body-parser",
+    "axios",
+    "passport"
+  ],
+  "author": "lasya",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.1.4"
+  }
+}
